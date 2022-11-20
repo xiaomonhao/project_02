@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 10
+        // var bar = function (x) {
+        //     var b = 5
+        //     foo(x + b)
+        // }
+        // var foo = function (y) {
+        //     var c = 5
+        //     console.log(a + c + y);
+        // }
+        // bar(10)
+
+        console.log(i); // undefine
+        var i =1
+        foo(1)
+        function foo(i){
+            if(i==4){
+                return 
+            }
+            console.log(i); // 123
+            foo(i+1) // 递归调用，在函数内部调用自己
+            console.log(i);// 321
+        }
+        console.log(i); //1
+
+
+        var c = 1
+        function c(c){
+            console.log(c);
+        }
+        // c(2)
+
+        var obj = {
+            func2:function(){
+                console.log(func2);
+            }
+        }
+        obj.func2()
+        // console.log(obj.func2);
+    </script>
+</body>
+
+</html>

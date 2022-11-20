@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = { age: 12 }
+        var obj1 = obj
+        obj = { name: "小莫", age: 18 }
+
+        obj1.name = 123
+        console.log(obj.name); //小莫
+        console.log(obj1.name); // 123
+        console.log(obj);
+        console.log(obj1);
+        function fun(obj1) {
+            obj1 = { age: 20 }     // 这个是重新开辟一个  但函数执行完就会被销毁 回收
+            // obj1.age = 20   这个是修改 age 的属性
+        }
+        fun(obj)
+        console.log(obj.age);
+        // var a = {age:12}
+        // var b= a
+        // a={name:'bob',age:13}
+        // b.age = 14
+        // console.log(b.age,a.name,a.age); // 14 bob 13
+        // function fun2(obj){
+        //     obj = {age:15}
+        // }
+        // fun2(a)
+        // console.log(a.age);//13
+    </script>
+</body>
+
+</html>

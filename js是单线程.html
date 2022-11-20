@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数提升先执行 定时器按照 时间执行
+        setTimeout(function(){
+            console.log(2222);
+        },2000)
+        setTimeout(function(){
+            console.log(1111);
+        },1000)
+        setTimeout(function(){
+            console.log("000");
+        },0)
+        function fun(){
+            console.log("fun");
+        }
+        fun()
+        console.log("alert执行之前");
+        alert('-----') // 暂停当前主线程执行
+        console.log("alert执行之后");
+
+    </script>
+</body>
+</html>

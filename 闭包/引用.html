@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 内部函数引用了 外部函数 的 i 形成了闭包
+        // for (var i = 0; i < 5; i++) {
+        //     var a = 1
+        //     function f1(a){
+                
+        //         console.log(a);
+        //         a++
+        //     }
+        //     f1(a)
+        // }
+
+
+        //求从1 开始的前n个 双数之和
+        // function sum(n){
+        //     let resulr = 0
+        //     for(let i = 0;i<n;i++){
+        //         resulr+=(i+i)+2
+        //     }
+        //     return resulr
+        // }
+        // console.log(sum(1))
+        // console.log(sum(2))
+        // console.log(sum(3))
+        function f(n){
+            // 1 1 2 3 5 8 13 21 34
+            //  f(n) =  f(n-1) + f(n-2)
+            return n<=2? 1 : f(n-1) + f(n-2)
+        }
+        console.log(f(10)); // 34  前面两个数相加
+
+
+    </script>
+</body>
+
+</html>

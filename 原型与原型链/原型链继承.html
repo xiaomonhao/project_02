@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //父类型
+        function Fun1() {
+            this.a = '小莫'
+            // console.log(this);
+        }
+        Fun1.prototype.sanyname = function () {
+            console.log(this.a);
+        }
+
+
+        //子类型
+        function Fun2() {
+            this.b = "小红"
+        }
+
+        Fun2.prototype = new Fun1()  // 让Fun2 的prototype  指向 Fun1 的原型对象 
+                                    // 可以用 Fun1的方法
+        // 让子类型的原型的 constructor 指向子类型                            
+        // Fun2.prototype.constructor = Fun2  
+        Fun2.prototype.san = function () {
+            console.log(this.b);
+        }
+        var fun1 = new Fun2()
+        var fun2 = new Fun2()
+        fun1.sanyname()
+        console.log(fun1.b);
+        fun1.san()
+        console.log(fun1);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fun1() {
+        //     var a = '我喜欢你'
+        //     function f2() {
+        //         console.log("f2" + a);
+        //     }
+        //     function f3() {
+        //         console.log("f3" + a);
+        //     }
+        //     // 向外暴露对象 给外部使用的方法  return 返回 给fun1
+        //     return {
+        //         f2: f2,
+        //         f3: f3
+        //     }
+        // }
+        // var f = fun1() // fun1有返回值 用 f 接收了 fun1 这个函数
+        // f.f2() // 调用f 的方法
+        // f.f3()
+
+        (function () {
+            var a = '我喜欢你'
+            function f2() {
+                console.log("f21" + a);
+            }
+            function f3() {
+                console.log("f32" + a);
+            }
+            // 直接往 window 中添加 方法
+            window.f = {
+                f2: f2,
+                f3: f3
+            }
+        })()
+        f.f2()
+        f.f3()
+    </script>
+</body>
+
+</html>

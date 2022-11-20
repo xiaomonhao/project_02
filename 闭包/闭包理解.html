@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function f1(){
+        //     var a = 1
+        //     function f2(){
+        //         console.log(a);
+        //     }
+        //     f2()
+        // }
+        // f1()
+
+        //1将一个函数作为另一个函数返回值
+        function f1(){
+            var a = 1
+            function f2(){
+                a++
+                console.log(a);
+            }
+            return f2
+        }
+        var f = f1() // f2 的闭包不会销毁 因为
+        // return 返回f2 出去了 给f1 f保存了 f2 的地址 
+        f() //2
+        f() //3
+        
+        // function f3(){  // 此时每次调用 都是从一 开始b 是局部
+        //     var b =1
+        //     b++
+        //     console.log(b);
+        // }
+        // f3() // 2
+        // f3() //2
+        // f3()//2
+
+    </script>
+</body>
+</html>

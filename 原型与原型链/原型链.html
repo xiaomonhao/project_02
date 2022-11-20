@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fun(){
+            console.log(1);
+        }
+        var fun1 = new Fun()
+        Fun()
+        console.log(fun1.__proto__===Fun.prototype); // true
+        console.log(Function.__proto__===Function.prototype);
+        console.log(Function.__proto__.__proto__);
+        console.log(Function instanceof Function);//true
+        console.log(Function instanceof Object);//true
+        console.log(Object instanceof Object);//true
+        console.log(Object instanceof Function);//true
+        console.log(Fun.__proto__.__proto__);
+        console.log(Object.prototype); //null
+
+    </script>
+</body>
+</html>
